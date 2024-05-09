@@ -1,0 +1,121 @@
+.header {
+    padding: 40px 0;
+}
+
+.header__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header__logo span {
+    color: var(--white);
+    font-family: var(--RM);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.7px;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.header__list {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.header__list-link {
+    position: relative;
+    color: var(--white-link);
+    font-family: var(--DMSM);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.23px;
+    padding-bottom: 2px;
+}
+
+.header__list-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--white-link);
+    transform: translateX(-50%);
+    transition: var(--trans);
+}
+
+.header__list-link:hover::after {
+    width: 100%;
+}
+
+.header__btn {
+    position: relative;
+    cursor: pointer;
+    color: var(--white-link);
+    font-family: var(--DMSM);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.23px;
+    width: 132px;
+    height: 42px;
+    border-radius: 5px;
+    border: none;
+    background: var(--gradient-btn);
+    transition: var(--trans-fill);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.header__btn:hover {
+    color: var(--pink);
+}
+
+.header__btn span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--white-link);
+    transition: var(--trans-fill);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.header__btn:hover span {
+    width: 300px;
+    height: 300px;
+}
+
+@media screen and (max-width: 876px) {
+    .header__wrap {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 35px;
+    }
+    .header__nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .header__list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+}

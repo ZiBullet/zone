@@ -1,0 +1,40 @@
+:root {
+    --DMSR: DMSans-Regular, sans-serif;
+    --DMSM: DMSans-Medium, sans-serif;
+    --DMSB: DMSans-Bold, sans-serif;
+    --RM: Rubik-Medium, sans-serif;
+
+    --body-bg: #111827;
+    --white: #fff;
+    --white-link: #F9FAFB;
+    --grey: #FFFFFFCC;
+    --grey-light: #E5E7EB;
+    --pink: #D946EF;
+
+    --trans-fill: .6s;
+    --trans: .3s;
+    --gradient-txt: linear-gradient(89.83deg, #2563EB 0.11%, #D946EF 58.65%);
+    --shadow-txt: 0px 4px 4px 0px #00000012;
+    --gradient-btn: linear-gradient(90.35deg, #2563EB 0.36%, #D946EF 201.02%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--DMSR);
+    background: var(--body-bg) url("../imgs/body-bg.webp") center/cover;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
