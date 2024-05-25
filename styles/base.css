@@ -31,6 +31,10 @@ body {
     background: var(--body-bg) url("../imgs/body-bg.webp") center/cover;
 }
 
+button {
+    cursor: pointer;
+}
+
 .container {
     max-width: 1200px;
     width: 100%;
