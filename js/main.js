@@ -18,3 +18,7 @@ class Fill {
 const fill = new Fill({
     btn: ".header__btn"
 })
+
+const bannerFill = new Fill({
+    btn: ".banner__join"
+})
