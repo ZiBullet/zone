@@ -22,3 +22,21 @@ const fill = new Fill({
 const bannerFill = new Fill({
     btn: ".banner__join"
 })
+
+class Skew {
+    constructor(obj) {
+        this.img = document.querySelector(obj.img);
+        this.section = document.querySelector(obj.section);
+
+        this.section.addEventListener("mousemove", (e) => this.follow(e, this.img));
+    }
+
+    follow(e, img) {
+        img.style.transform = `skew(${(e.pageY / 2) * -0.02}deg, ${(e.pageX / 2) * 0.02}deg )`
+    }
+}
+
+const bannerSkew = new Skew({
+    img: ".banner__img",
+    section: ".banner"
+})

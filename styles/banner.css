@@ -19,9 +19,9 @@
 
 .banner__title {
     font-family: var(--DMSB);
-    font-size: 58px;
+    font-size: clamp(1.875rem, 1.243rem + 3.16vw, 3.625rem);
     font-weight: 700;
-    line-height: 84px;
+    line-height: clamp(2.625rem, 1.722rem + 4.51vw, 5.125rem);
     letter-spacing: 0.02em;
     background: var(--gradient-txt);
     background-clip: text;
@@ -112,4 +112,25 @@
 .banner__img {
     max-width: 640px;
     width: 100%;
+}
+
+@media screen and (max-width: 1148px) {
+    .banner {
+        margin-top: 50px;
+    }
+    .banner__wrap {
+        justify-content: center;
+    }
+    .banner__img {
+        position: absolute;
+        bottom: 0;
+        opacity: .4;
+        z-index: -1;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .banner__img {
+        display: none;
+    }
 }
