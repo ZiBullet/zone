@@ -19,9 +19,9 @@
 
 .banner__title {
     font-family: var(--DMSB);
-    font-size: 58px;
+    font-size: clamp(1.75rem, 1.068rem + 3.41vw, 3.625rem);
     font-weight: 700;
-    line-height: 84px;
+    line-height: clamp(2.25rem, 1.159rem + 5.45vw, 5.25rem);
     letter-spacing: 0.02em;
     background: var(--gradient-txt);
     background-clip: text;
@@ -29,6 +29,8 @@
 }
 
 .banner__text {
+    position: relative;
+    z-index: 10;
     color: var(--grey-light);
     font-family: var(--DMSM);
     font-size: 15px;
@@ -112,4 +114,14 @@
 .banner__img {
     max-width: 640px;
     width: 100%;
+}
+ 
+@media screen and (max-width: 1175px) {
+    .banner__wrap {
+        flex-direction: column;
+    }
+
+    .banner__desc {
+        max-width: 554px;
+    }
 }
