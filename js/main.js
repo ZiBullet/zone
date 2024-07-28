@@ -41,3 +41,36 @@ class Bubbling {
 const bubbling = new Bubbling({
     item: ".banner__img"
 })
+
+class FadeUp {
+    constructor(obj) {
+        this.elements = document.querySelectorAll(obj.elements);
+
+        this.elements.forEach(element => {
+            window.addEventListener("scroll", () => this.fade(element))
+        })
+    }
+
+    fade(element) {
+        const cond = (window.scrollY + window.innerHeight * .6) < element.offsetTop;
+
+        if (cond) {
+            element.style.transform = 'translateY(60px)';
+            element.style.opacity = 0;
+        } else {
+            element.style.transform = 'translate(0)';
+            element.style.opacity = 1;
+        }
+
+    }
+}
+
+const fadeUp = new FadeUp({
+    elements: ".fade-up"
+})
+
+class FadeRight {
+    constructor(obj) {
+        this.elements = document.querySelectorAll(obj.elements);
+    }
+}
