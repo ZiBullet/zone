@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    overflow: hidden;
 }
 
 .service-desc {
@@ -26,6 +27,7 @@
 }
 
 .service-card {
+    transition: .6s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,6 +46,7 @@
 .service-card__img {
     width: 74px;
     height: 74px;
+    padding: 18px 16px;
 
     display: flex;
     align-items: center;
@@ -84,9 +87,8 @@
 .service-card__desc-title {
     color: var(--white);
     font-family: var(--DMSM);
-    font-size: 24px;
+    font-size: clamp(1.125rem, 0.989rem + 0.68vw, 1.5rem);
     font-weight: 500;
-    line-height: 31.25px;
     margin-bottom: 18px;
 }
 

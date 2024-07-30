@@ -72,5 +72,49 @@ const fadeUp = new FadeUp({
 class FadeRight {
     constructor(obj) {
         this.elements = document.querySelectorAll(obj.elements);
+
+        this.elements.forEach(element => {
+            window.addEventListener('scroll', () => this.fade(element))
+        })
+    }
+
+    fade(element) {
+        const cond = (window.scrollY - window.innerHeight * .4) < element.offsetTop;
+        if (cond) {
+            element.style.opacity = 0;
+            element.style.transform = 'translateX(-100%)';
+        } else {
+            element.style.opacity = 1;
+            element.style.transform = 'translateX(0)';
+        }
     }
 }
+
+const fadeRight = new FadeRight({
+    elements: ".fade-right"
+})
+
+class FadeLeft {
+    constructor(obj) {
+        this.elements = document.querySelectorAll(obj.elements);
+
+        this.elements.forEach(element => {
+            window.addEventListener('scroll', () => this.fade(element))
+        })
+    }
+
+    fade(element) {
+        const cond = (window.scrollY - window.innerHeight * .4) < element.offsetTop;
+        if (cond) {
+            element.style.opacity = 0;
+            element.style.transform = 'translateX(100%)';
+        } else {
+            element.style.opacity = 1;
+            element.style.transform = 'translateX(0)';
+        }
+    }
+}
+
+const fadeLeft = new FadeLeft({
+    elements: ".fade-left"
+})
