@@ -1,20 +1,25 @@
 class Fill {
     constructor(obj) {
-        this.btns = document.querySelector(obj.btns);
+        this.btns = document.querySelectorAll(obj.btns);
 
 
-        this.btns.forEact(btn => {
+        this.btns.forEach(btn => {
             btn.addEventListener("mousemove", e => this.filler(e, btn))
         })
     }
-
+    
     filler(e, btn) {
-        const x = e.pageX - btn.offsetLeft,
-            y = e.pageY - btn.offsetTop,
-            span = btn.querySelector("span");
-
-        span.style.left = x + "px";
-        span.style.top = y + "px";
+        
+        const span = btn.querySelector('span');
+        const attr = span.getAttribute('data-fillcolor');
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        
+        span.style.background = attr;
+        span.style.left = `${x}px`;
+        span.style.top = `${y}px`;
     }
 }
 
@@ -24,21 +29,30 @@ const fill = new Fill({
 
 class Bubbling {
     constructor(obj) {
-        this.item = document.querySelector(obj.item);
+        this.items = document.querySelectorAll(obj.items);
 
-        window.addEventListener("scroll", () => this.scrollDown(this.item))
+        window.addEventListener("scroll", () => this.items.forEach(item => {
+            this.scrollDown(item)
+        }))
+
     }
 
     scrollDown(item) {
-        window.innerWidth > 1175
-            ? item.style.transform = `translateY(-${window.scrollY * .35}px)`
-            : item.style.transform = `translateY(-${window.scrollY * .15}px)`
+        const parent = item.closest('section') ?? item.closest('div');
+        const parentOffset = parent.offsetTop;
+
+        if (window.scrollY > parentOffset + parent.clientWidth) return;
+
+        parentOffset - window.scrollY > parentOffset &&
+            window.innerWidth > 1175
+            ? item.style.transform = `translateY(${(parentOffset - window.scrollY) * .35}px)`
+            : item.style.transform = `translateY(${(parentOffset - window.scrollY) * .15}px)`
     }
 
 }
 
 const bubbling = new Bubbling({
-    item: ".banner__img"
+    items: ".item-bubbling"
 })
 
 class FadeUp {
@@ -157,3 +171,4 @@ class HoverTilt {
 const hoverTilt = new HoverTilt({
     cards: ".parallax-card"
 })
+

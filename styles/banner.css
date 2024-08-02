@@ -45,43 +45,20 @@
 }
 
 .banner__join {
-    position: relative;
-    cursor: pointer;
     color: var(--white-link);
-    font-family: var(--DMSM);
+
     font-size: 14px;
-    font-weight: 500;
     line-height: 20.83px;
     width: 135px;
     height: 62px;
     border-radius: 6px;
-    border: none;
     background: var(--gradient-btn);
-    transition: var(--trans-fill);
-    z-index: 1;
-    overflow: hidden;
 }
 
 .banner__join:hover {
     color: var(--pink);
 }
 
-.banner__join span {
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: var(--white-link);
-    transition: var(--trans-fill);
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
-
-.banner__join:hover span {
-    width: 300px;
-    height: 300px;
-}
 
 .banner__watch {
     max-width: 152px;

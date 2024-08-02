@@ -61,42 +61,19 @@
 }
 
 .header__btn {
-    position: relative;
-    cursor: pointer;
     color: var(--white-link);
-    font-family: var(--DMSM);
+
     font-size: 14px;
-    font-weight: 500;
     line-height: 18.23px;
     width: 132px;
     height: 42px;
     border-radius: 5px;
-    border: none;
     background: var(--gradient-btn);
     transition: var(--trans-fill);
-    z-index: 1;
-    overflow: hidden;
 }
 
 .header__btn:hover {
     color: var(--pink);
-}
-
-.header__btn span {
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: var(--white-link);
-    transition: var(--trans-fill);
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
-
-.header__btn:hover span {
-    width: 300px;
-    height: 300px;
 }
 
 @media screen and (max-width: 876px) {
