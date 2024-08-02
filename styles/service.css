@@ -27,6 +27,7 @@
 }
 
 .service-card {
+    will-change: transform, box-shadow;
     transition: .6s;
     display: flex;
     flex-direction: column;

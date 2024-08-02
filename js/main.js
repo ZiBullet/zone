@@ -31,9 +31,9 @@ class Bubbling {
     }
 
     scrollDown(item) {
-        window.innerWidth > 1175 
-        ? item.style.transform = `translateY(-${window.scrollY * .35}px)`
-        : item.style.transform = `translateY(-${window.scrollY * .15}px)`
+        window.innerWidth > 1175
+            ? item.style.transform = `translateY(-${window.scrollY * .35}px)`
+            : item.style.transform = `translateY(-${window.scrollY * .15}px)`
     }
 
 }
@@ -117,4 +117,44 @@ class FadeLeft {
 
 const fadeLeft = new FadeLeft({
     elements: ".fade-left"
+})
+
+class HoverTilt {
+    constructor(obj) {
+        this.cards = document.querySelectorAll(obj.cards);
+
+
+        this.cards.forEach(card => {
+            card.style.transformStyle = 'preserve-3d';
+
+            card.addEventListener('mousemove', e => this.handleMouseMove(e, card));
+            card.addEventListener('mouseleave', () => this.handleMouseLeave(card))
+        })
+    }
+
+    handleMouseMove(e, card) {
+        const rect = card.getBoundingClientRect();
+        const cardWidth = rect.width;
+        const cardHeight = rect.height;
+        const centerX = rect.left + cardWidth / 2;
+        const centerY = rect.top + cardHeight / 2;
+        const mouseX = e.clientX - centerX;
+        const mouseY = e.clientY - centerY;
+
+        const rotateX = (10 * mouseY) / (cardHeight / 2);
+        const rotateY = (-10 * mouseX) / (cardWidth / 2);
+
+
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        card.style.boxShadow = `${rotateY * 2}px ${-rotateX * 2}px 20px rgba(0,0,0,0.2)`;
+
+    }
+    handleMouseLeave(card) {
+        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        card.style.boxShadow = '0px 22px 18px 0px #0000000D';
+    }
+}
+
+const hoverTilt = new HoverTilt({
+    cards: ".parallax-card"
 })
