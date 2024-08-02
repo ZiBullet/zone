@@ -1,8 +1,11 @@
 class Fill {
     constructor(obj) {
-        this.btn = document.querySelector(obj.btn);
+        this.btns = document.querySelector(obj.btns);
 
-        this.btn.addEventListener("mousemove", e => this.filler(e, this.btn))
+
+        this.btns.forEact(btn => {
+            btn.addEventListener("mousemove", e => this.filler(e, btn))
+        })
     }
 
     filler(e, btn) {
@@ -16,11 +19,7 @@ class Fill {
 }
 
 const fill = new Fill({
-    btn: ".header__btn"
-});
-
-const bannerFill = new Fill({
-    btn: ".banner__join"
+    btns: ".btn-fill"
 });
 
 class Bubbling {
