@@ -35,6 +35,20 @@ button {
     cursor: pointer;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span {
+    color: var(--white);
+    font-family: var(--RM);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.7px;
+}
+
 .btn-fill {
     position: relative;
     cursor: pointer;

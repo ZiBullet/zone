@@ -11,6 +11,7 @@
     background: linear-gradient(180deg, rgba(254, 254, 255, 0.0145) 0%, rgba(255, 255, 255, 0.02) 100%);
     border: 1px solid;
     border-image-source: linear-gradient(97.12deg, rgba(255, 255, 255, 0.08) -3.52%, rgba(255, 255, 255, 0.07) 100.35%);
+    box-shadow: 0px 22px 18px 0px #0000000D;
 }
 
 .subscribe-desc {
