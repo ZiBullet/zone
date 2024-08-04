@@ -7,16 +7,16 @@ class Fill {
             btn.addEventListener("mousemove", e => this.filler(e, btn))
         })
     }
-    
+
     filler(e, btn) {
-        
+
         const span = btn.querySelector('span');
         const attr = span.getAttribute('data-fillcolor');
         const rect = btn.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
-        
+
+
         span.style.background = attr;
         span.style.left = `${x}px`;
         span.style.top = `${y}px`;
@@ -73,8 +73,8 @@ class FadeUp {
         } else {
             element.style.transform = 'translate(0)';
             element.style.opacity = 1;
-        }
 
+        }
     }
 }
 
